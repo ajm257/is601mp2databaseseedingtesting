@@ -1,4 +1,5 @@
 
+<head>
 
 <title>About</title>
 
@@ -66,6 +67,7 @@
             @auth
                 <a href="{{ url('/home') }}">Home</a>
             @else
+                <a href="{{ route('welcome') }}">Back to Welcome Page</a>
                 <a href="{{ route('login') }}">Login</a>
 
                 @if (Route::has('register'))
