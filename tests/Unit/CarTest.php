@@ -49,4 +49,11 @@ class CarTest extends TestCase
 
         $this->assertCount($count>=50, ['foo']);
     }
+
+    public function testCarYear() {
+
+        $record = Cars::inRandomOrder()->first();
+
+        $this->assertInternalType("int", $record->year);
+    }
 }
