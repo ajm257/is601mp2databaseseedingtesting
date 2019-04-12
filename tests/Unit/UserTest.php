@@ -52,4 +52,12 @@ class UserTest extends TestCase
 
     }
 
+    public function testCount() {
+        $users = User::All();
+        $count = $users->count();
+
+        $this->assertCount($count>=50, ['foo']);
+    }
+
+
 }
