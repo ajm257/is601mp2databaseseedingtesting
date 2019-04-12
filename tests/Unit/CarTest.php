@@ -43,4 +43,10 @@ class CarTest extends TestCase
         $this->assertTrue($record->delete());
 
     }
+    public function testCarCount() {
+        $cars = Cars::All();
+        $count = $cars->count();
+
+        $this->assertCount($count>=50, ['foo']);
+    }
 }
