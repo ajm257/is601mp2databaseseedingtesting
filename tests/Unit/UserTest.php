@@ -33,7 +33,7 @@ class UserTest extends TestCase
         $user = User::find(1);
 
         $user->name = 'Steve Smith';
-        $user->email = 'smithsteve@example.com';
+        $user->email = 'stevesmith@example.net';
 
         $this->assertTrue($user->save());
 
@@ -43,10 +43,10 @@ class UserTest extends TestCase
     {
         // Validate the request...
 
-        $record = factory(\App\User::class)->make();
+        $record = User::inRandomOrder()->first();
 
 
-        $record->save();
+
 
         $this->assertTrue($record->delete());
 
