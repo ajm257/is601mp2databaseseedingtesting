@@ -26,18 +26,30 @@ class UserTest extends TestCase
 
     }
 
-     public function testUpdateUser()
+    public function testUpdateUser()
     {
         // Validate the request...
 
         $user = User::find(1);
 
         $user->name = 'Steve Smith';
-        $user->email='smithsteve@example.com';
+        $user->email = 'smithsteve@example.com';
 
         $this->assertTrue($user->save());
 
     }
 
+    public function testDeleteUser()
+    {
+        // Validate the request...
+
+        $record = factory(\App\User::class)->make();
+
+
+        $record->save();
+
+        $this->assertTrue($record->delete());
+
+    }
 
 }
