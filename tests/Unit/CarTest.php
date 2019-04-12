@@ -14,13 +14,13 @@ class CarTest extends TestCase
      *
      * @return void
      */
-    public function testInsertCars()
+   public function testInsertCars()
     {
 
         $record = new Cars();
         $record->user_id='5';
-        $record->model='ford';
-        $record->make='taurus';
+        $record->model='taurus';
+        $record->make='ford';
         $record->year='2006';
 
         $this->assertTrue($record->save());
@@ -34,5 +34,13 @@ class CarTest extends TestCase
     $car->year = '2000';
 
     $this->assertTrue($car->save());
+    }
+
+    public function testDeleteCar()
+    {
+        $record = Cars::inRandomOrder()->first();
+
+        $this->assertTrue($record->delete());
+
     }
 }
