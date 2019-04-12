@@ -26,4 +26,18 @@ class UserTest extends TestCase
 
     }
 
+     public function testUpdateUser()
+    {
+        // Validate the request...
+
+        $user = User::find(1);
+
+        $user->name = 'Steve Smith';
+        $user->email='smithsteve@example.com';
+
+        $this->assertTrue($user->save());
+
+    }
+
+
 }
