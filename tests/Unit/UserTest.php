@@ -58,6 +58,11 @@ class UserTest extends TestCase
 
         $this->assertCount($count>=50, ['foo']);
     }
+    public function testModelIsString()
+    {
+
+        $this->assertInternalType("string",User::class);
+    }
 
 
 }

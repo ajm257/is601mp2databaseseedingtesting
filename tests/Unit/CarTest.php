@@ -68,4 +68,10 @@ class CarTest extends TestCase
                 $this->equalTo('honda'),
                 $this->equalTo('toyota')));
    }
+
+    public function testModelIsString()
+    {
+
+        $this->assertInternalType("string",Cars::class);
+        }
 }
