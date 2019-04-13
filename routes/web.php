@@ -22,5 +22,6 @@ Route::get('/about', 'AboutController@about')->name('about');
 Route::get('/contact', 'ContactController@contact')->name('contact');
 Route::post('/contact', 'ContactController@store')->name('contact.store');
 Route::get('/thanks/{name}', 'ContactController@thanks')->name('thanks');
+Route::get('/profile', 'HomeController@profile')->name('profile');
 
 
