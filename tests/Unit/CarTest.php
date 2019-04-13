@@ -56,4 +56,16 @@ class CarTest extends TestCase
 
         $this->assertInternalType("int", $record->year);
     }
+
+    public function testCarMakeEqualsValue() {
+
+        $record = Cars::inRandomOrder()->first();
+
+        $this->assertThat(
+            $record->make,
+            $this->logicalOr(
+                $this->equalTo('ford'),
+                $this->equalTo('honda'),
+                $this->equalTo('toyota')));
+   }
 }
